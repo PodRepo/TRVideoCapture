@@ -1,0 +1,1 @@
+../../../../../Classes/VideoCapture/SDAVAssetExportSession.h

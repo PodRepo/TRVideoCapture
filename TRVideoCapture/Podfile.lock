@@ -1,0 +1,14 @@
+PODS:
+  - TRVideoCapture (0.0.1)
+
+DEPENDENCIES:
+  - TRVideoCapture (from `../`)
+
+EXTERNAL SOURCES:
+  TRVideoCapture:
+    :path: ../
+
+SPEC CHECKSUMS:
+  TRVideoCapture: afeffb8ea6e708e5b2a5772842a60fd4ed671db2
+
+COCOAPODS: 0.38.2
