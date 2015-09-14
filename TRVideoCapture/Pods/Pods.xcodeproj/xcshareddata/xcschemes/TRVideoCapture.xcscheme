@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "54B5D8407D35F7D7EC77DC0C"
+               BlueprintIdentifier = "4C20022727B232286A0BA483"
                BuildableName = "libTRVideoCapture.a"
                BlueprintName = "TRVideoCapture"
                ReferencedContainer = "container:Pods.xcodeproj">

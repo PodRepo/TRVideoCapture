@@ -25,6 +25,10 @@
     
 }
 
+- (IBAction)onTap:(id)sender {
+    _vc.view.frame = CGRectMake(0, -100, 320, 568);
+    [self.view addSubview:_vc.view];
+}
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

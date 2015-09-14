@@ -22,5 +22,11 @@
   "exclude_files": "Classes/Exclude",
   "resources": "Resources/*",
   "frameworks": "AVFoundation",
-  "requires_arc": true
+  "libraries": "c++",
+  "requires_arc": true,
+  "dependencies": {
+    "pop": [
+      "~> 1.0"
+    ]
+  }
 }

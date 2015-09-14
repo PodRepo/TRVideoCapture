@@ -8,11 +8,11 @@
 
 
 #import <QuartzCore/QuartzCore.h>
-
+#import <Foundation/Foundation.h>
 #import "CaptureViewController.h"
 #import "SBCaptureToolKit.h"
 #import "CenterProgress.h"
-
+#import "POP.h"
 
 typedef NS_ENUM(NSInteger, CaptureStatus){
     ready = 0,
@@ -233,7 +233,7 @@ typedef NS_ENUM(NSInteger, CaptureStatus){
 
 
 -(void)startAnim:(void (^)(BOOL finished))completion{
-    float duration = 0.7;
+    float duration = 0.3;
     
     self.releaseCancel.alpha = 0.0;
     
@@ -249,6 +249,28 @@ typedef NS_ENUM(NSInteger, CaptureStatus){
         completion(finished);
     }];
     
+    POPBasicAnimation *actionButtonAnimation = [POPBasicAnimation animation];
+    actionButtonAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
+    actionButtonAnimation.toValue=[NSValue valueWithCGSize:CGSizeMake(1.2, 1.2)];
+    actionButtonAnimation.duration = duration;
+    [actionButtonAnimation setRemovedOnCompletion:YES];
+    [actionButtonAnimation setCompletionBlock:^(POPAnimation *ani, BOOL ret) {
+        self.actionButton.transform = CGAffineTransformIdentity;
+    }];
+    [self.actionButton pop_addAnimation:actionButtonAnimation forKey:@"actionButtonAnimation"];
+
+    self.upCancel.alpha = 1.0;
+    POPBasicAnimation *upCancelMove = [POPBasicAnimation animation];
+    upCancelMove.property = [POPAnimatableProperty propertyWithName:kPOPViewCenter];
+    CGPoint center = self.upCancel.center;
+    upCancelMove.fromValue = [NSValue valueWithCGPoint:CGPointMake(center.x, center.y)];
+    upCancelMove.toValue = [NSValue valueWithCGPoint:CGPointMake(center.x, center.y - 20)];
+    upCancelMove.duration = duration;
+    [upCancelMove setRemovedOnCompletion:YES];
+    [upCancelMove setCompletionBlock:^(POPAnimation *ani, BOOL ret) {
+        self.upCancel.transform = CGAffineTransformIdentity;
+    }];
+    [self.upCancel pop_addAnimation:upCancelMove forKey:@"upCancelMove"];
     
 //    self.actionButton.transform = CGAffineTransformIdentity;
 //    self.actionButton.scaleX = 1.2;
@@ -300,13 +322,25 @@ typedef NS_ENUM(NSInteger, CaptureStatus){
 
 -(void)changeStatus:(CaptureStatus)status{
     float duration = 0.7;
+    
+
     if (status == start_cancel) {
         self.upCancel.alpha = 0.0;
         self.releaseCancel.alpha = 1.0;
         
-        self.releaseCancel.transform = CGAffineTransformIdentity;
         self.releaseCancel.text = @"松开发送";
         self.releaseCancel_bottom.constant = -20.0;
+        
+        POPBasicAnimation *releaseCancelAni = [POPBasicAnimation animation];
+        releaseCancelAni.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
+        releaseCancelAni.fromValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 0.0)];
+        releaseCancelAni.toValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 1.0)];
+        releaseCancelAni.duration = duration;
+        [releaseCancelAni setCompletionBlock:^(POPAnimation *ani, BOOL ret) {
+            self.releaseCancel.transform = CGAffineTransformIdentity;
+        }];
+        [self.releaseCancel pop_addAnimation:releaseCancelAni forKey:@"releaseCancelAni"];
+
 //        self.releaseCancel.scaleY = 0.0;
 //        self.releaseCancel.duration = duration;
 //        [self.releaseCancel animate];
@@ -319,14 +353,31 @@ typedef NS_ENUM(NSInteger, CaptureStatus){
         self.releaseCancel.text = @"手指不要放开";
         //const失效
         self.releaseCancel_bottom.constant = -20.0;
+        
+        POPBasicAnimation *releaseCancelAni = [POPBasicAnimation animation];
+        releaseCancelAni.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
+        releaseCancelAni.fromValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 0.0)];
+        releaseCancelAni.toValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 1.0)];
+        releaseCancelAni.duration = duration;
+        [self.releaseCancel pop_addAnimation:releaseCancelAni forKey:@"releaseCancelAni"];
+
 //        self.releaseCancel.scaleY = 0.0;
 //        self.releaseCancel.duration = duration;
 //        [self.releaseCancel animate];
     }else{
         self.upCancel.alpha = 1.0;
+        
+        POPBasicAnimation *releaseCancelAni = [POPBasicAnimation animation];
+        releaseCancelAni.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
+        releaseCancelAni.fromValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 1.0)];
+        releaseCancelAni.toValue = [NSValue valueWithCGSize:CGSizeMake(0.0, 0.0)];
+        releaseCancelAni.duration = duration;
+        [self.releaseCancel pop_addAnimation:releaseCancelAni forKey:@"releaseCancelAni"];
+        
+
 //        self.releaseCancel.alpha = 0.0;
         
-        self.releaseCancel.transform = CGAffineTransformIdentity;
+//        self.releaseCancel.transform = CGAffineTransformIdentity;
 //        self.releaseCancel.scaleY = 0.01;
 //        self.releaseCancel.scaleX = 0.01;
 //        self.releaseCancel.duration = duration;
@@ -349,7 +400,14 @@ typedef NS_ENUM(NSInteger, CaptureStatus){
     float duration = 0.7;
     if (self.status == start_cancel) {
         
-        self.releaseCancel.transform = CGAffineTransformIdentity;
+        POPBasicAnimation *releaseCancelAni = [POPBasicAnimation animation];
+        releaseCancelAni.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
+        releaseCancelAni.fromValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 1.0)];
+        releaseCancelAni.toValue = [NSValue valueWithCGSize:CGSizeMake(0.0, 0.0)];
+        releaseCancelAni.duration = duration;
+        [self.releaseCancel pop_addAnimation:releaseCancelAni forKey:@"releaseCancelAni"];
+
+//        self.releaseCancel.transform = CGAffineTransformIdentity;
 //        self.releaseCancel.scaleY = 0.01;
 //        self.releaseCancel.scaleX = 0.01;
 //        self.releaseCancel.duration = duration;
