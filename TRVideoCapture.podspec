@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TRVideoCapture"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "fork fro TRVideoCapture"
 
   s.description  = <<-DESC
@@ -37,6 +37,6 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  s.dependency "pop", '~> 1.0'
+  s.dependency "pop", '~> 1.0.7'
 
 end

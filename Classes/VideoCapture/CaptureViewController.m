@@ -333,7 +333,7 @@ typedef NS_ENUM(NSInteger, CaptureStatus){
         
         POPBasicAnimation *releaseCancelAni = [POPBasicAnimation animation];
         releaseCancelAni.property = [POPAnimatableProperty propertyWithName:kPOPViewScaleXY];
-        releaseCancelAni.fromValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 0.0)];
+        releaseCancelAni.fromValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 0.01)];
         releaseCancelAni.toValue = [NSValue valueWithCGSize:CGSizeMake(1.0, 1.0)];
         releaseCancelAni.duration = duration;
         [releaseCancelAni setCompletionBlock:^(POPAnimation *ani, BOOL ret) {
