@@ -1,7 +1,7 @@
 PODS:
-  - pop (1.0.7)
-  - TRVideoCapture (0.0.1):
-    - pop (~> 1.0)
+  - pop (1.0.8)
+  - TRVideoCapture (0.0.2):
+    - pop (~> 1.0.7)
 
 DEPENDENCIES:
   - TRVideoCapture (from `../`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
-  TRVideoCapture: 8d68ff3ad578308ea7962de28ed6861ae0db7c76
+  pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
+  TRVideoCapture: e7e0cb2f134c2c4f7553028436f4bc425b10ef6f
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

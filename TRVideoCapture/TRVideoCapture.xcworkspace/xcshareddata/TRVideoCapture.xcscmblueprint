@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "c77efc0e-5535-8143-bb08-cd1000b99262++505",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "c77efc0e-5535-8143-bb08-cd1000b99262++505" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "c77efc0e-5535-8143-bb08-cd1000b99262++505" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3EA8AB4F-8E3D-4F90-A198-F6559FE18741",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "c77efc0e-5535-8143-bb08-cd1000b99262++505" : "swiftclient\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TRVideoCapture",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "PodRepo\/TRVideoCapture\/TRVideoCapture\/TRVideoCapture.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.11\/svn\/swiftclient",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c77efc0e-5535-8143-bb08-cd1000b99262++505"
+    }
+  ]
+}

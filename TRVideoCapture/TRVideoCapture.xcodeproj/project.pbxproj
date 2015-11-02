@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE5EA6AEF284B0EE4CD70B65 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54819F64DC2A9B6D31A9410A /* libPods-Example.a */; };
+		A8EFF081294A4B4E0C0CC1A1 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 771D84309CB71494CB45A243 /* libPods-Example.a */; };
+		C01C55D21BE0C746007CA2A8 /* UIImage+VideoCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C55D11BE0C746007CA2A8 /* UIImage+VideoCapture.m */; };
 		C07446CB1BA440490029A019 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C07446CA1BA440490029A019 /* main.m */; };
 		C07446CE1BA440490029A019 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C07446CD1BA440490029A019 /* AppDelegate.m */; };
 		C07446D11BA440490029A019 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C07446D01BA440490029A019 /* ViewController.m */; };
@@ -28,9 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		54819F64DC2A9B6D31A9410A /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		771D84309CB71494CB45A243 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7798DB1669CC7AEFEC538208 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8A367A34E3CACA8B87CABF7B /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		C01C55D01BE0C746007CA2A8 /* UIImage+VideoCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+VideoCapture.h"; sourceTree = "<group>"; };
+		C01C55D11BE0C746007CA2A8 /* UIImage+VideoCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+VideoCapture.m"; sourceTree = "<group>"; };
 		C07446C51BA440490029A019 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07446C91BA440490029A019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C07446CA1BA440490029A019 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -45,7 +48,7 @@
 		C07446E31BA440490029A019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C07446E41BA440490029A019 /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
 		C07446EC1BA4407E0029A019 /* TRVideoCapture.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = TRVideoCapture.podspec; path = ../TRVideoCapture.podspec; sourceTree = "<group>"; };
-		C07446ED1BA441640029A019 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		C07446ED1BA441640029A019 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C07446F01BA4474A0029A019 /* CaptureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptureViewController.h; sourceTree = "<group>"; };
 		C07446F11BA4474A0029A019 /* CaptureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptureViewController.m; sourceTree = "<group>"; };
 		C07446F21BA4474A0029A019 /* CenterProgress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CenterProgress.h; sourceTree = "<group>"; };
@@ -74,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE5EA6AEF284B0EE4CD70B65 /* libPods-Example.a in Frameworks */,
+				A8EFF081294A4B4E0C0CC1A1 /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +177,8 @@
 		C07446EF1BA4474A0029A019 /* VideoCapture */ = {
 			isa = PBXGroup;
 			children = (
+				C01C55D01BE0C746007CA2A8 /* UIImage+VideoCapture.h */,
+				C01C55D11BE0C746007CA2A8 /* UIImage+VideoCapture.m */,
 				C07446F01BA4474A0029A019 /* CaptureViewController.h */,
 				C07446F11BA4474A0029A019 /* CaptureViewController.m */,
 				C07446F21BA4474A0029A019 /* CenterProgress.h */,
@@ -210,7 +215,7 @@
 		CCE6CA6720EF0BEBC85747DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				54819F64DC2A9B6D31A9410A /* libPods-Example.a */,
+				771D84309CB71494CB45A243 /* libPods-Example.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				C07446C21BA440490029A019 /* Frameworks */,
 				C07446C31BA440490029A019 /* Resources */,
 				C3A2C49A38AA3259AA6C9E1F /* Copy Pods Resources */,
+				4D44F87BD96420384417098C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -312,6 +318,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4D44F87BD96420384417098C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9FB831362313BA3191508E8C /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C01C55D21BE0C746007CA2A8 /* UIImage+VideoCapture.m in Sources */,
 				C07446D11BA440490029A019 /* ViewController.m in Sources */,
 				C07446CE1BA440490029A019 /* AppDelegate.m in Sources */,
 				C07446CB1BA440490029A019 /* main.m in Sources */,

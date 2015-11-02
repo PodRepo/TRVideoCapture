@@ -608,7 +608,6 @@
     self.totalVideoDur += _currentVideoDur;
     NSLog(@"本段视频长度: %f", _currentVideoDur);
     NSLog(@"现在的视频总长度: %f", _totalVideoDur);
-    
     if (_cancel) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if ([_delegate respondsToSelector:@selector(videoRecorder:didFinishRecordingToOutPutFileAtURL:duration:totalDur:error:)]) {
@@ -617,6 +616,15 @@
         });
         return;
     }
+    if (_totalVideoDur < MIN_VIDEO_DUR) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([_delegate respondsToSelector:@selector(videoRecorder:didFinishRecordingToOutPutFileAtURL:duration:totalDur:error:)]) {
+                [_delegate videoRecorder:self didFinishRecordingToOutPutFileAtURL:nil duration:0 totalDur:0 error:[NSError errorWithDomain:@"timeNotEnough" code:0 userInfo:nil]];
+            }
+        });
+        return;
+    }
+
     
     if (!error) {
         SBVideoData *data = [[SBVideoData alloc] init];

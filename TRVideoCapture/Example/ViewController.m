@@ -19,7 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _vc = [[CaptureViewController alloc] initWithNibName:@"CaptureViewController" bundle:nil];
+//    let bundle = NSBundle(forClass: CaptureViewController.self)
+//    let captureViewCon = CaptureViewController(nibName: "CaptureViewController", bundle: bundle)
+    NSBundle *bundel = [NSBundle bundleForClass:[CaptureViewController class]];
+    _vc = [[CaptureViewController alloc] initWithNibName:@"CaptureViewController" bundle:bundel];
     
 
     
